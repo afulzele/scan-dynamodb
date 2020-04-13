@@ -1,0 +1,24 @@
+service: scan-dynamodb-get
+
+provider:
+  name: aws
+  runtime: python3.7
+  credentials:
+    accessKeyId: ###
+    secretAccessKey: ###
+
+package:
+  exclude:
+      - node_modules/**
+      - venv/**
+
+functions:
+  scan-dynamodb:
+    handler: handler.main
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true

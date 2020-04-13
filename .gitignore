@@ -3,7 +3,7 @@ node_modules/
 mapVenv/
 .idea/
 *.csv
-serverless.yml
+# serverless.yml
 .vscode/
 
 # Distribution / packaging
