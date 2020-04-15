@@ -20,6 +20,7 @@ def main(event, context):
 
     response = {
         "statusCode": 200,
+        "headers": { "Access-Control-Allow-Origin": "*", "Content-Type": "application/json" },
         "body": json.dumps(result['Items'], cls=DecimalEncoder)
     }
 
@@ -27,6 +28,7 @@ def main(event, context):
         result = table.scan(ExclusiveStartKey=result['LastEvaluatedKey'])
         response = {
             "statusCode": 200,
+            "headers": { "Access-Control-Allow-Origin": "*", "Content-Type": "application/json" },
             "body": json.dumps(result['Items'], cls=DecimalEncoder)
         }
 
